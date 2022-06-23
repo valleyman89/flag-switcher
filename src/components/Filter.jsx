@@ -10,9 +10,11 @@ const Filter = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          <Dropdown.Item href="#/action-1">Africa</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">America</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Asia</Dropdown.Item>
+          <Dropdown.Item href="">Europe</Dropdown.Item>
+          <Dropdown.Item href="">Oceania</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </>
