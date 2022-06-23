@@ -4,7 +4,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 const Filter = () => {
   return (
     <>
-      <Dropdown>
+      <Dropdown className="mb-4">
         <Dropdown.Toggle variant="light" size="lg" id="dropdown-basic">
           Filter by Region
         </Dropdown.Toggle>
