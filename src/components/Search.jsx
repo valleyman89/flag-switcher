@@ -7,9 +7,9 @@ const Search = () => {
   const { setCountryData } = useCountryContext();
   const [searchTerm, setSearchTerm] = useState([]);
 
-  function capitalise(string) {
+  const capitalise = (string) => {
     return string && string[0].toUpperCase() + string.slice(1);
-  }
+  };
 
   const setField = (inputValue) => {
     !inputValue
@@ -19,7 +19,6 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchTerm);
     setCountryData(searchCountry(searchTerm));
   };
 
