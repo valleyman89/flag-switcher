@@ -727,6 +727,6 @@ export function filterCountry(region) {
 }
 
 export function searchCountry(searchText) {
-  return countries.find((country) => country.name.common === searchText);
+  return countries.filter((country) => country.name.common === searchText);
 }
 // https://restcountries.com/v3.1/all
