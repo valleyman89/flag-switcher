@@ -7,9 +7,11 @@ export default function Country() {
   let params = useParams();
   let country = getCountry(params.countryCode);
 
+  const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [useLocation()]);
+  }, [location]);
 
   return (
     <Container>
