@@ -7,11 +7,9 @@ export default function Country() {
   let params = useParams();
   let country = getCountry(params.countryCode);
 
-  const location = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+  }, [useLocation()]);
 
   return (
     <Container>
@@ -52,8 +50,6 @@ export default function Country() {
             <ListGroup.Item>
               <strong>Capital:</strong> {country.capital}
             </ListGroup.Item>
-          </ListGroup>
-          <ListGroup className="mb-4" variant="flush">
             <ListGroup.Item>
               <strong>Top Level Domain:</strong> {country.tld}
             </ListGroup.Item>
