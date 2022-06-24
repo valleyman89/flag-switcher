@@ -535,6 +535,184 @@ let countries = [
       latlng: [53.32, -6.23],
     },
   },
+  {
+    name: {
+      common: "Morocco",
+      official: "Kingdom of Morocco",
+      nativeName: {
+        ara: {
+          official: "المملكة المغربية",
+          common: "المغرب",
+        },
+        ber: {
+          official: "ⵜⴰⴳⵍⴷⵉⵜ ⵏ ⵍⵎⵖⵔⵉⴱ",
+          common: "ⵍⵎⴰⵖⵔⵉⴱ",
+        },
+      },
+    },
+    tld: [".ma", "المغرب."],
+    cca2: "MA",
+    ccn3: "504",
+    cca3: "MAR",
+    cioc: "MAR",
+    independent: true,
+    status: "officially-assigned",
+    unMember: true,
+    currencies: {
+      MAD: {
+        name: "Moroccan dirham",
+        symbol: "د.م.",
+      },
+    },
+    idd: {
+      root: "+2",
+      suffixes: ["12"],
+    },
+    capital: ["Rabat"],
+    altSpellings: ["MA", "Kingdom of Morocco", "Al-Mamlakah al-Maġribiyah"],
+    region: "Africa",
+    subregion: "Northern Africa",
+    languages: {
+      ara: "Arabic",
+      ber: "Berber",
+    },
+    translations: {
+      ara: {
+        official: "المملكة المغربية",
+        common: "المغرب",
+      },
+      ces: {
+        official: "Marocké království",
+        common: "Maroko",
+      },
+      cym: {
+        official: "Kingdom of Morocco",
+        common: "Morocco",
+      },
+      deu: {
+        official: "Königreich Marokko",
+        common: "Marokko",
+      },
+      est: {
+        official: "Maroko Kuningriik",
+        common: "Maroko",
+      },
+      fin: {
+        official: "Marokon kuningaskunta",
+        common: "Marokko",
+      },
+      fra: {
+        official: "Royaume du Maroc",
+        common: "Maroc",
+      },
+      hrv: {
+        official: "Kraljevina Maroko",
+        common: "Maroko",
+      },
+      hun: {
+        official: "Marokkói Királyság",
+        common: "Marokkó",
+      },
+      ita: {
+        official: "Regno del Marocco",
+        common: "Marocco",
+      },
+      jpn: {
+        official: "モロッコ王国",
+        common: "モロッコ",
+      },
+      kor: {
+        official: "모로코 왕국",
+        common: "모로코",
+      },
+      nld: {
+        official: "Koninkrijk Marokko",
+        common: "Marokko",
+      },
+      per: {
+        official: "پادشاهی مراکش",
+        common: "مراکش",
+      },
+      pol: {
+        official: "Królestwo Marokańskie",
+        common: "Maroko",
+      },
+      por: {
+        official: "Reino de Marrocos",
+        common: "Marrocos",
+      },
+      rus: {
+        official: "Королевство Марокко",
+        common: "Марокко",
+      },
+      slk: {
+        official: "Marocké kniežatstvo",
+        common: "Maroko",
+      },
+      spa: {
+        official: "Reino de Marruecos",
+        common: "Marruecos",
+      },
+      swe: {
+        official: "Konungariket Marocko",
+        common: "Marocko",
+      },
+      urd: {
+        official: "مملکتِ مراکش",
+        common: "مراکش",
+      },
+      zho: {
+        official: "摩洛哥王国",
+        common: "摩洛哥",
+      },
+    },
+    latlng: [32.0, -5.0],
+    landlocked: false,
+    borders: ["DZA", "ESH", "ESP"],
+    area: 446550.0,
+    demonyms: {
+      eng: {
+        f: "Moroccan",
+        m: "Moroccan",
+      },
+      fra: {
+        f: "Marocaine",
+        m: "Marocain",
+      },
+    },
+    flag: "🇲🇦",
+    maps: {
+      googleMaps: "https://goo.gl/maps/6oMv3dyBZg3iaXQ5A",
+      openStreetMaps: "https://www.openstreetmap.org/relation/3630439",
+    },
+    population: 36910558,
+    gini: {
+      2013: 39.5,
+    },
+    fifa: "MAR",
+    car: {
+      signs: ["MA"],
+      side: "right",
+    },
+    timezones: ["UTC"],
+    continents: ["Africa"],
+    flags: {
+      png: "https://flagcdn.com/w320/ma.png",
+      svg: "https://flagcdn.com/ma.svg",
+    },
+    coatOfArms: {
+      png: "https://mainfacts.com/media/images/coats_of_arms/ma.png",
+      svg: "https://mainfacts.com/media/images/coats_of_arms/ma.svg",
+    },
+    startOfWeek: "monday",
+    capitalInfo: {
+      latlng: [34.02, -6.82],
+    },
+    postalCode: {
+      format: "#####",
+      regex: "^(\\d{5})$",
+    },
+  },
 ];
 
 export function getCountries() {
@@ -542,6 +720,10 @@ export function getCountries() {
 }
 export function getCountry(code) {
   return countries.find((country) => country.cioc === code);
+}
+
+export function filterCountry(region) {
+  return countries.filter((country) => country.region === region);
 }
 
 // https://restcountries.com/v3.1/all
