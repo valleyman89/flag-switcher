@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CountryProvider } from "./context/countryContext";
 import { Navbar, Container } from "react-bootstrap";
 import App from "./App";
-import Country from "./routes/country";
+import Country from "./routes/Country";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
