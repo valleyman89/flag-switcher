@@ -5,7 +5,6 @@ export const CountryContext = createContext();
 
 export const CountryProvider = ({ children }) => {
   const [countryData, setCountryData] = useState(getCountries());
-
   return (
     <CountryContext.Provider value={{ countryData, setCountryData }}>
       {children}
