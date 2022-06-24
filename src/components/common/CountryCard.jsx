@@ -7,7 +7,7 @@ const CountryCard = ({ data }) => {
   return (
     <Col>
       <Card className="mb-4 shadow" style={{ width: "18rem" }}>
-        <Link to={`/country/${data.cioc}`}>
+        <Link to={`/country/${data.cca3}`}>
           <Card.Img
             variant="top"
             src={data.flags.png}

@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { Container, Row, Col, Button, ListGroup, Card } from "react-bootstrap";
-import { getCountry } from "../services/data";
+
+import { useCountryContext } from "../context/countryContext";
 
 export default function Country() {
+  const { getCountry } = useCountryContext();
   let params = useParams();
   let country = getCountry(params.countryCode);
 
   const location = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { searchCountry, getCountries } from "../services/data";
+
 import { useCountryContext } from "../context/countryContext";
 
 const Search = () => {
-  const { setCountryData } = useCountryContext();
+  const { setCountries, searchCountry, getCountries } = useCountryContext();
   const [searchTerm, setSearchTerm] = useState([]);
 
   const capitalise = (string) => {
@@ -13,13 +13,13 @@ const Search = () => {
 
   const setField = (inputValue) => {
     !inputValue
-      ? setCountryData(getCountries())
+      ? setCountries(getCountries)
       : setSearchTerm(capitalise(inputValue));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCountryData(searchCountry(searchTerm));
+    setCountries(searchCountry(searchTerm));
   };
 
   return (

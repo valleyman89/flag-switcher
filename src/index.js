@@ -17,6 +17,9 @@ root.render(
             <Navbar.Brand>
               <h1>Where in the world?</h1>
             </Navbar.Brand>
+            <Navbar.Collapse className="justify-content-end">
+              <Navbar.Text>Dark Mode</Navbar.Text>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
         <Routes>
