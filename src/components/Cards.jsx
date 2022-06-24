@@ -1,7 +1,7 @@
 import React from "react";
 import CountryCard from "./common/CountryCard";
 import { useCountryContext } from "../context/countryContext";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 const Cards = () => {
   const { countryData } = useCountryContext();
