@@ -2,9 +2,10 @@ import React from "react";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
 import Cards from "./components/Cards";
-import { Container, Row, Col } from "react-bootstrap";
-
+import { Alert, Container, Row, Col } from "react-bootstrap";
+import { useCountryContext } from "./context/countryContext";
 function App() {
+  const { countryData } = useCountryContext();
   return (
     <>
       <Container fluid>
@@ -20,7 +21,11 @@ function App() {
         </Row>
         <Row>
           <Col>
-            <Cards />
+            {countryData.length === 0 ? (
+              <Alert variant="warning">No results...</Alert>
+            ) : (
+              <Cards />
+            )}
           </Col>
         </Row>
       </Container>
