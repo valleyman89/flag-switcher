@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { searchCountry } from "../services/data";
+import { searchCountry, getCountries } from "../services/data";
 import { useCountryContext } from "../context/countryContext";
 
 const Search = () => {
   const { setCountryData } = useCountryContext();
+  const [searchTerm, setSearchTerm] = useState([]);
 
-  const [form, setForm] = useState({});
-  const [errors, setErrors] = useState({});
+  function capitalise(string) {
+    return string && string[0].toUpperCase() + string.slice(1);
+  }
 
-  const setField = (field, value) => {
-    setForm({ ...form, [field]: value });
-    if (!!errors[field]) setErrors({ ...errors, [field]: null });
+  const setField = (inputValue) => {
+    !inputValue
+      ? setCountryData(getCountries())
+      : setSearchTerm(capitalise(inputValue));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
-    console.log(searchCountry(form.country));
-    // setCountryData(searchCountry(form.country));
+    console.log(searchTerm);
+    setCountryData(searchCountry(searchTerm));
   };
 
   return (
@@ -28,12 +30,8 @@ const Search = () => {
           size="lg"
           type="search"
           placeholder="Search for a country..."
-          onChange={(e) => setField("country", e.target.value)}
-          isInvalid={!!errors.country}
+          onChange={(e) => setField(e.target.value)}
         />
-        <Form.Control.Feedback type="invalid">
-          {errors.country}
-        </Form.Control.Feedback>
       </Form.Group>
     </Form>
   );
