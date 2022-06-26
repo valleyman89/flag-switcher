@@ -6,7 +6,7 @@ import { Alert, Container, Row, Col } from "react-bootstrap";
 import { useCountryContext } from "./context/countryContext";
 
 function App() {
-  const { countries, error, loading } = useCountryContext();
+  const { countries, loading } = useCountryContext();
   return (
     <>
       <Container fluid>
@@ -23,9 +23,7 @@ function App() {
         <Row>
           <Col>
             {loading && <Alert variant="info">Loading...</Alert>}
-            {error && <Alert variant="danger">{`Error...${error}`}</Alert>}
-
-            {countries.length === 0 ? (
+            {!loading && countries.length === 0 ? (
               <Alert variant="warning">No results...</Alert>
             ) : (
               <Cards />

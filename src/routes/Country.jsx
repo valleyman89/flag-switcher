@@ -5,9 +5,10 @@ import { Container, Row, Col, Button, ListGroup, Card } from "react-bootstrap";
 import { useCountryContext } from "../context/countryContext";
 
 export default function Country() {
-  const { getCountry } = useCountryContext();
-  let params = useParams();
-  let country = getCountry(params.countryCode);
+  const { singleCountry } = useCountryContext();
+
+  const params = useParams();
+  const country = singleCountry(params.countryCode);
 
   const location = useLocation();
   useEffect(() => {
@@ -45,6 +46,15 @@ export default function Country() {
                     )
                   )}
                 </ListGroup.Item>
+                {/* 
+                {["population", "region", "capital", "subregion"].map(
+                  (fact) => (
+                    <ListGroup.Item>
+                      <strong>{fact}:</strong> {`${country.fact}`}
+                    </ListGroup.Item>
+                  )
+                )} */}
+
                 <ListGroup.Item>
                   <strong>Population:</strong>{" "}
                   {country.population.toLocaleString()}
@@ -74,14 +84,17 @@ export default function Country() {
                   ))}
                 </ListGroup.Item>
               </ListGroup>
-              <Card.Title>Border Countries:</Card.Title>
-              {country.borders.map((border, index) => (
-                <Link key={index} to={`/country/${border}`}>
-                  <Button className="m-1 shadow" variant="light">
-                    {border}
-                  </Button>
-                </Link>
-              ))}
+              {country.borders ? (
+                <Card.Title>Border Countries:</Card.Title>
+              ) : null}
+              {country.borders &&
+                country.borders.map((border, index) => (
+                  <Link key={index} to={`/country/${border}`}>
+                    <Button className="m-1 shadow" variant="light">
+                      {border}
+                    </Button>
+                  </Link>
+                ))}
             </Card.Body>
           </Card>
         </Col>

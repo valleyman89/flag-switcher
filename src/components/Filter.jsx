@@ -1,15 +1,15 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useCountryContext } from "../context/countryContext";
-// import { filterCountry, getCountries } from "../services/data";
 
 const Filter = () => {
-  const { setCountries, filterCountries, countries } = useCountryContext();
+  const { setCountries, filterCountries, allCountries } = useCountryContext();
 
   const handleFilter = (e) => {
     e.target.id === "Clear"
-      ? setCountries([...countries])
+      ? setCountries(allCountries())
       : setCountries(filterCountries(e.target.id));
+    console.log("countryContext.jsx\nAFTER\n", allCountries());
   };
 
   return (

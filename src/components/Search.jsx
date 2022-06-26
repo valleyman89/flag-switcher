@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useCountryContext } from "../context/countryContext";
 
 const Search = () => {
-  const { setCountries, searchCountry, getCountries } = useCountryContext();
+  const { setCountries, searchCountry, allCountries } = useCountryContext();
   const [searchTerm, setSearchTerm] = useState([]);
 
   const capitalise = (string) => {
@@ -13,7 +13,7 @@ const Search = () => {
 
   const setField = (inputValue) => {
     !inputValue
-      ? setCountries(getCountries)
+      ? setCountries(allCountries())
       : setSearchTerm(capitalise(inputValue));
   };
 
