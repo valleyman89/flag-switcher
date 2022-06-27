@@ -1,25 +1,23 @@
-import React, { useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Badge,
-  ListGroup,
-  Card,
   Alert,
+  Badge,
+  Button,
+  Card,
+  Col,
+  Container,
+  ListGroup,
+  Row,
 } from "react-bootstrap";
-
 import { useCountryContext } from "../context/countryContext";
+import React, { useEffect } from "react";
 
 export default function Country() {
-  const { singleCountry, capitalise } = useCountryContext();
-
-  const params = useParams();
+  const { capitalise, singleCountry } = useCountryContext();
   const country = singleCountry(params.countryCode);
-
   const location = useLocation();
+  const params = useParams();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -62,9 +60,9 @@ export default function Country() {
                       )}
                     </ListGroup.Item>
                     {[
+                      "capital",
                       "population",
                       "region",
-                      "capital",
                       "subregion",
                       "tld",
                     ].map((fact, index) => (

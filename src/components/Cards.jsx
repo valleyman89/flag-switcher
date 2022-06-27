@@ -1,7 +1,7 @@
-import React from "react";
-import CountryCard from "./common/CountryCard";
-import { useCountryContext } from "../context/countryContext";
 import { Container, Row } from "react-bootstrap";
+import { useCountryContext } from "../context/countryContext";
+import CountryCard from "./common/CountryCard";
+import React from "react";
 
 const Cards = () => {
   const { countries, filter, search } = useCountryContext();

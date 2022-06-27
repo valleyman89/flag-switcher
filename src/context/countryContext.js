@@ -4,8 +4,8 @@ export const CountryContext = createContext();
 
 export const CountryProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -43,16 +43,16 @@ export const CountryProvider = ({ children }) => {
   return (
     <CountryContext.Provider
       value={{
-        loading,
-        countries,
-        setCountries,
-        singleCountry,
-        resetCountries,
-        filter,
-        setFilter,
-        search,
-        setSearch,
         capitalise,
+        countries,
+        filter,
+        loading,
+        resetCountries,
+        search,
+        setCountries,
+        setFilter,
+        setSearch,
+        singleCountry,
       }}
     >
       {children}

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-
 import { useCountryContext } from "../context/countryContext";
+import Form from "react-bootstrap/Form";
+import React, { useState } from "react";
 
 const Search = () => {
-  const { setSearch, setFilter, capitalise } = useCountryContext();
+  const { capitalise, setFilter, setSearch } = useCountryContext();
   const [searchTerm, setSearchTerm] = useState([]);
 
   const handleChange = (e) => {

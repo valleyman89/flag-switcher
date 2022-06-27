@@ -1,8 +1,9 @@
-import React from "react";
 import { Card, Col } from "react-bootstrap";
-import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 import { useCountryContext } from "../../context/countryContext";
+import ListGroup from "react-bootstrap/ListGroup";
+import React from "react";
+
 const CountryCard = ({ data }) => {
   const { capitalise } = useCountryContext();
   return (

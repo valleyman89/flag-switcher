@@ -1,9 +1,9 @@
-import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
 import { useCountryContext } from "../context/countryContext";
+import Dropdown from "react-bootstrap/Dropdown";
+import React from "react";
 
 const Filter = () => {
-  const { setFilter, setSearch, resetCountries } = useCountryContext();
+  const { resetCountries, setFilter, setSearch } = useCountryContext();
 
   const handleFilter = (e) =>
     e.target.id === "Clear"
