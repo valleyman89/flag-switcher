@@ -4,22 +4,18 @@ import Form from "react-bootstrap/Form";
 import { useCountryContext } from "../context/countryContext";
 
 const Search = () => {
-  const { setCountries, searchCountry, allCountries } = useCountryContext();
+  const { setSearch, setFilter, capitalise } = useCountryContext();
   const [searchTerm, setSearchTerm] = useState([]);
 
-  const capitalise = (string) => {
-    return string && string[0].toUpperCase() + string.slice(1);
-  };
-
-  const setField = (inputValue) => {
-    !inputValue
-      ? setCountries(allCountries())
-      : setSearchTerm(capitalise(inputValue));
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+    return !e.target.value ? (setFilter(), setSearch()) : null;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCountries(searchCountry(searchTerm));
+    setFilter();
+    setSearch(capitalise(searchTerm));
   };
 
   return (
@@ -29,7 +25,7 @@ const Search = () => {
           size="lg"
           type="search"
           placeholder="Search for a country..."
-          onChange={(e) => setField(e.target.value)}
+          onChange={(e) => handleChange(e)}
         />
       </Form.Group>
     </Form>
