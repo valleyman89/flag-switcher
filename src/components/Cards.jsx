@@ -4,14 +4,20 @@ import { useCountryContext } from "../context/countryContext";
 import { Container, Row } from "react-bootstrap";
 
 const Cards = () => {
-  const { countries } = useCountryContext();
+  const { countries, filter, search } = useCountryContext();
   return (
     <Container fluid>
       <Row>
         {countries &&
-          countries.map((country, index) => (
-            <CountryCard key={index} data={country} />
-          ))}
+          countries
+            .filter((country) => {
+              return !filter && !search
+                ? countries
+                : country.region === filter || country.name.common === search;
+            })
+            .map((country, index) => (
+              <CountryCard key={index} data={country} />
+            ))}
       </Row>
     </Container>
   );
