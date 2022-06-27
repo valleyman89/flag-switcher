@@ -14,7 +14,8 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFilter();
-    setSearch(capitalise(searchTerm));
+    const sanitisedSearchTerm = searchTerm.toLowerCase();
+    setSearch(capitalise(sanitisedSearchTerm));
   };
 
   return (
