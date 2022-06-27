@@ -13,12 +13,10 @@ function App() {
       <Navigation />
       <Container fluid>
         <Row>
-          <Col>
+          <Col sm={8}>
             <Search />
           </Col>
-        </Row>
-        <Row>
-          <Col>
+          <Col sm={4}>
             <Filter />
           </Col>
         </Row>

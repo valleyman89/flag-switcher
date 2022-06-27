@@ -11,7 +11,7 @@ const Filter = () => {
       : (setSearch(), setFilter(e.target.id));
 
   return (
-    <Dropdown className="mb-4">
+    <Dropdown className="mt-3 mb-4">
       <Dropdown.Toggle variant="light" size="lg" id="dropdown-basic">
         Filter by Region
       </Dropdown.Toggle>
