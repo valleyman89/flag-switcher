@@ -5,6 +5,8 @@ export const CountryContext = createContext();
 export const CountryProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -19,21 +21,23 @@ export const CountryProvider = ({ children }) => {
     getData();
   }, []);
 
-  function allCountries() {
-    return countries;
-  }
-
   function singleCountry(code) {
     return countries.find((country) => country.cca3 === code);
   }
 
-  function filterCountries(region) {
-    console.log("countryContext.jsx\nBEFORE\n", countries);
-    return countries.filter((country) => country.region === region);
+  function resetCountries() {
+    setFilter();
+    setSearch();
   }
 
-  function searchCountry(searchText) {
-    return countries.filter((country) => country.name.common === searchText);
+  function capitalise(string) {
+    const searchWords = string.split(" ");
+
+    return searchWords
+      .map((searchWord) => {
+        return searchWord[0].toUpperCase() + searchWord.substring(1);
+      })
+      .join(" ");
   }
 
   return (
@@ -42,10 +46,13 @@ export const CountryProvider = ({ children }) => {
         loading,
         countries,
         setCountries,
-        allCountries,
         singleCountry,
-        filterCountries,
-        searchCountry,
+        resetCountries,
+        filter,
+        setFilter,
+        search,
+        setSearch,
+        capitalise,
       }}
     >
       {children}
