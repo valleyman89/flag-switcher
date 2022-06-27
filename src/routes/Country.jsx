@@ -19,6 +19,11 @@ export default function Country() {
   const country = singleCountry(params.countryCode);
   const location = useLocation();
 
+  const displayFlag = (border) => {
+    const borderCountry = singleCountry(border);
+    return borderCountry.flag;
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -113,8 +118,12 @@ export default function Country() {
                     {country.borders &&
                       country.borders.map((border, index) => (
                         <Link key={index} to={`/country/${border}`}>
-                          <Button className="m-1 shadow" variant="light">
-                            {border}
+                          <Button
+                            size="lg"
+                            className="m-1 shadow"
+                            variant="light"
+                          >
+                            {displayFlag(border)}
                           </Button>
                         </Link>
                       ))}
