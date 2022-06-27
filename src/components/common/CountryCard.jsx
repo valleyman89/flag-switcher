@@ -2,8 +2,9 @@ import React from "react";
 import { Card, Col } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
-
+import { useCountryContext } from "../../context/countryContext";
 const CountryCard = ({ data }) => {
+  const { capitalise } = useCountryContext();
   return (
     <Col>
       <Card className="mb-4 shadow" style={{ width: "18rem" }}>
@@ -17,18 +18,18 @@ const CountryCard = ({ data }) => {
         <Card.Body>
           <Card.Title>{data.name.common}</Card.Title>
           <ListGroup variant="flush">
-            <ListGroup.Item>
-              <strong>Population: </strong>
-              {data.population.toLocaleString()}
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <strong>Region: </strong>
-              {data.region}
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <strong>Capital: </strong>
-              {data.capital}
-            </ListGroup.Item>
+            {["population", "region", "capital"].map((fact, index) => (
+              <React.Fragment key={index}>
+                {data[fact] ? (
+                  <ListGroup.Item key={index}>
+                    <strong>{capitalise(fact)}: </strong>
+                    {fact === "population"
+                      ? data[fact].toLocaleString()
+                      : data[fact]}
+                  </ListGroup.Item>
+                ) : null}
+              </React.Fragment>
+            ))}
           </ListGroup>
         </Card.Body>
       </Card>
