@@ -3,14 +3,12 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { useCountryContext } from "../context/countryContext";
 
 const Filter = () => {
-  const { setCountries, filterCountries, allCountries } = useCountryContext();
+  const { setFilter, setSearch, resetCountries } = useCountryContext();
 
-  const handleFilter = (e) => {
+  const handleFilter = (e) =>
     e.target.id === "Clear"
-      ? setCountries(allCountries())
-      : setCountries(filterCountries(e.target.id));
-    console.log("countryContext.jsx\nAFTER\n", allCountries());
-  };
+      ? resetCountries()
+      : (setSearch(), setFilter(e.target.id));
 
   return (
     <Dropdown className="mb-4">
@@ -18,7 +16,7 @@ const Filter = () => {
         Filter by Region
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        {["Africa", "Asia", "America", "Europe", "Oceania"].map((region) => (
+        {["Africa", "Asia", "Americas", "Europe", "Oceania"].map((region) => (
           <Dropdown.Item
             as="button"
             id={region}
