@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/flag-switcher/static/css/main.3bc81508.css",
-    "main.js": "/flag-switcher/static/js/main.defc04de.js",
+    "main.js": "/flag-switcher/static/js/main.40973605.js",
     "index.html": "/flag-switcher/index.html",
     "main.3bc81508.css.map": "/flag-switcher/static/css/main.3bc81508.css.map",
-    "main.defc04de.js.map": "/flag-switcher/static/js/main.defc04de.js.map"
+    "main.40973605.js.map": "/flag-switcher/static/js/main.40973605.js.map"
   },
   "entrypoints": [
     "static/css/main.3bc81508.css",
-    "static/js/main.defc04de.js"
+    "static/js/main.40973605.js"
   ]
 }
