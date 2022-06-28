@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/valleyman89/flag-switcher](https://github.com/valleyman89/flag-switcher)
+- Live Site URL: [https://valleyman89.github.io/flag-switcher/](https://valleyman89.github.io/flag-switcher/)
 
 ### Screenshot
 
