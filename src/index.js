@@ -11,9 +11,12 @@ root.render(
   <BrowserRouter>
     <CountryProvider>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/country" element={<App />} />
-        <Route path="/country/:countryCode" element={<Country />} />
+        <Route path="/flag-switcher/" element={<App />} />
+        <Route path="/flag-switcher/country" element={<App />} />
+        <Route
+          path="/flag-switcher/country/:countryCode"
+          element={<Country />}
+        />
       </Routes>
     </CountryProvider>
   </BrowserRouter>
