@@ -105,7 +105,7 @@ export default function Country() {
                 {country.borders ? <h2>Border Countries: </h2> : null}
                 {country.borders &&
                   country.borders.map((border, index) => (
-                    <Link key={index} to={`/country/${border}`}>
+                    <Link key={index} to={`/flag-switcher/country/${border}`}>
                       <Button size="lg" className="m-1 shadow" variant="light">
                         {displayFlag(border)}
                       </Button>
