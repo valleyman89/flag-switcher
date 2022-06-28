@@ -38,7 +38,7 @@ export default function Country() {
           <>
             <Row>
               <Col>
-                <Link to="/">
+                <Link to="/flag-switcher/">
                   <Button className="mt-4 mb-4" variant="light">
                     Back
                   </Button>
