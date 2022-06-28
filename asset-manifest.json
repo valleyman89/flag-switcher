@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/flag-switcher/static/css/main.3bc81508.css",
+    "main.js": "/flag-switcher/static/js/main.955dcf09.js",
+    "index.html": "/flag-switcher/index.html",
+    "main.3bc81508.css.map": "/flag-switcher/static/css/main.3bc81508.css.map",
+    "main.955dcf09.js.map": "/flag-switcher/static/js/main.955dcf09.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bc81508.css",
+    "static/js/main.955dcf09.js"
+  ]
+}
